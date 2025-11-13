@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-    passwd \
+    bat \
     ca-certificates \
     git \
     curl \
@@ -47,3 +47,4 @@ ENV PATH="$PATH:/opt/nvim-linux-x86_64/bin:/home/ubuntu/.cargo/bin:/home/ubuntu/
 RUN cargo install grip-grab
 
 RUN ln -s $(which fdfind) ~/.local/bin/fd
+RUN ln -s /usr/bin/batcat ~/.local/bin/bat
