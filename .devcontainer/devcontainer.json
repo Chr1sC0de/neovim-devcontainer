@@ -1,0 +1,22 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"description": "Defines a dev container",
+	"allowComments": true,
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	"mounts": [
+		{
+			"source": "${localEnv:HOME}/.config/nvim",
+			"target": "/home/ubuntu/.config/nvim",
+			"type": "bind",
+			"consistency": "delegated"
+		}
+	],
+	"containerUser": "ubuntu",
+	"features": {
+		"ghcr.io/devcontainer-community/devcontainer-features/starship.rs:1": {}
+	},
+	"postCreateCommand": "echo 'eval \"$(starship init bash)\"'>>~/.bashrc",
+	"updateRemoteUserUID": true
+}
