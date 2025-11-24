@@ -12,6 +12,16 @@ podman kill --all
 podman rm --all
 ```
 
+as an alternative grab the Dockerfile and place it in an isolated folder
+
+create devcontainer-build.sh
+
+```bash
+#!/usr/bin/env bash
+
+podman build -t chris-devcontainer <target-folder>
+```
+
 devcontainer-start.sh
 
 ```bash
