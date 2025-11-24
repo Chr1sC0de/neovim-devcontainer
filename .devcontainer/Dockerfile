@@ -11,7 +11,6 @@ RUN apt-get update && \
     unzip \
     nodejs \
     npm \
-    yarn \
     ripgrep \
     fd-find \
     build-essential \
@@ -26,6 +25,7 @@ RUN apt-get update && \
     sudo \
     && rm -rf /var/lib/apt/lists/*
 
+RUN npm install -g yarn
 
 RUN echo "ubuntu ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
